@@ -10,8 +10,9 @@ import UIKit
 
 class ColorViewController: UIViewController, UITabBarDelegate, UITableViewDataSource {
     
-    var foods = ["red", "orange", "yellow", "green", "blue", "purple", "brown"]
-    
+    var colors = ["red", "orange", "yellow", "green", "blue", "purple", "brown"]
+    var Col = [UIColor.red, UIColor.orange, UIColor.yellow, UIColor.green, UIColor.blue, UIColor.purple, UIColor.brown]
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,13 +24,15 @@ class ColorViewController: UIViewController, UITabBarDelegate, UITableViewDataSo
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return foods.count
+        return colors.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "colorCell", for: indexPath)
         
-        cell.textLabel?.text = foods[indexPath.row]
+        cell.textLabel?.text = colors[indexPath.row]
+        let s = colors[indexPath.row]
+        cell.backgroundColor =  Col[indexPath.row]
         
         return cell
     }
