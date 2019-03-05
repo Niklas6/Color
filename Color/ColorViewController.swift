@@ -31,7 +31,6 @@ class ColorViewController: UIViewController, UITabBarDelegate, UITableViewDataSo
         let cell = tableView.dequeueReusableCell(withIdentifier: "colorCell", for: indexPath)
         
         cell.textLabel?.text = colors[indexPath.row]
-        let s = colors[indexPath.row]
         cell.backgroundColor =  Col[indexPath.row]
         
         return cell
